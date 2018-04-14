@@ -1,0 +1,77 @@
+.contacts_page {
+    display: block;
+    background-color: white;
+
+}
+
+.contacts_page .contacts_img {
+    height: 28.4vw;
+}
+
+.contacts_img {
+    overflow: hidden;
+    position: relative;
+    width: 1280px;
+
+    -webkit-margin-after: 0px;
+    -webkit-margin-before: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-margin-start: 0px;;
+    -webkit-tap-highlight-color: rgba(201, 224, 253, 0);
+
+}
+
+.contacts_page .contacts_img .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background: url(../../assets/contacts_bg.jpeg) no-repeat center;
+    -webkit-background-size: 100% auto;
+    background-size: 100% auto;
+    transition: opacity .5s;
+
+}
+
+.contacts_details {
+    width: 65%;
+    margin: 7vw auto;
+    opacity: 0;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    background-color: white;
+    transition: opacity .5s;
+}
+
+.fadeIn {
+    opacity: 1;
+}
+
+.bg.fadeIn {
+    opacity: 1;
+}
+
+.contacts_details .row {
+    margin: 0 -1vw;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.soc_info {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.fb_icon {
+    height: 48px;
+    width: 48px;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}

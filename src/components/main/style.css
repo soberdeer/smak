@@ -1,0 +1,58 @@
+.main {
+    height: 100%;
+    width: 100%;
+    background: no-repeat fixed center;
+}
+
+
+.main:after {
+    content: "";
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+}
+
+.main_delivery {
+    position: absolute;
+    width: 60%;
+    top: 50%;
+    left: 50%;
+    z-index: 11;
+    text-align: center;
+    color: #fff;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.main_delivery_text{
+    margin: 0;
+    font-size: 3.57em;
+    font-weight: 300;
+}
+
+.main_delivery_text * {
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    margin-top:0;
+    margin-bottom: 0;
+}
+
+
+.main_delivery_text .sound{
+    font-size: 2rem;
+}
+
+.main_delivery_text .shashlik {
+    font-family: Yanone Kaffeesatz, sans-serif;
+    font-weight: bold;
+    font-size: 6rem;
+    letter-spacing: .8vw;
+}
+
+.main_delivery_text .and_pastry{
+    font-size: 3rem;
+}

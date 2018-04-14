@@ -1,0 +1,97 @@
+.contacts_page {
+    display: block;
+    background-color: white;
+
+}
+
+.contacts_page .contacts_img {
+    height: calc(100% - 26vw);
+    max-height: 70%;
+}
+
+.contacts_img {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    -webkit-margin-after: 0px;
+    -webkit-margin-before: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-margin-start: 0px;;
+    -webkit-tap-highlight-color: rgba(201, 224, 253, 0);
+
+}
+
+.header-back {
+    top: 0;
+    left: 0;
+    width: calc(100% - 3.6vw);
+    z-index: 1;
+    height: 5vw;
+    padding: 1.5vw 1.8vw;
+    background: url(../../assets/noise.png) repeat center #a4a096;
+    opacity: 0.9;
+}
+
+.info_map {
+    position: absolute;
+    height: 70%;
+    width: 13%;
+    min-width: 200px;
+    margin-top: 45px;
+    left: 10px;
+    z-index: 1;
+    background-color: white;
+}
+
+
+.contacts_details {
+    width: 65%;
+    margin: 3vw auto;
+    opacity: 0;
+    height: 3vw;
+    min-height: 50px;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+
+    background-color: white;
+    transition: opacity .5s;
+}
+
+.fadeIn {
+    opacity: 1;
+}
+
+.bg.fadeIn {
+    opacity: 1;
+}
+
+.contacts_details .row {
+    margin: 0 -1vw;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.contacts_details .row .col{
+    width: 30%;
+    min-width: 250px;
+}
+
+.soc_info {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: opacity .5s;
+}
+
+
+.fb_icon {
+    height: 2vw;
+    width: 2vw;
+    min-height: 30px;
+    min-width: 30px;
+    margin-bottom: 2vw;
+    margin-top: 2vw;
+}
