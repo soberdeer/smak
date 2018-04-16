@@ -4,6 +4,7 @@ import './App.css';
 import Logo from './assets/Logo'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Contacts from "./components/addresses/Contacts";
+import Menu from "./components/menu/Menu";
 
 
 class App extends Component {
@@ -11,7 +12,8 @@ class App extends Component {
         super(props);
         this.state = {
             height: document.documentElement.clientHeight,
-            width: document.documentElement.clientWidth
+            width: document.documentElement.clientWidth,
+            active: window.location.pathname
         };
         this.onResize = this.onResize.bind(this)
     }
@@ -44,24 +46,19 @@ class App extends Component {
                     </a>
                     <nav>
                         <ul>
-                            {menuItem('Меню')}
-                            {menuItem('Акции')}
+                            {menuItem('Главная', '/', this.state.active)}
+                            {menuItem('Меню', '/menu', this.state.active)}
                             {menuItem('Новости')}
-                            {menuItem('Доставка', 'https://www.delivery-club.ru/srv/Smak_ram/#Ulica_Ramjenki/', true)}
-                            {menuItem('Контакты', '/contacts')}
+                            {menuItem('Доставка', 'https://www.delivery-club.ru/srv/Smak_ram/#Ulica_Ramjenki/', undefined, true)}
+                            {menuItem('Контакты', '/contacts', this.state.active)}
                         </ul>
                     </nav>
-                    {/*<h1 className="App-title">Smak</h1>*/}
-                    {/*<section className="pageLinks">*/}
-                    {/*<a href="/main">About</a>*/}
-                    {/*</section>*/}
                 </header>
-
-
                 <Router>
                     <Switch>
                         <Route exact path="/" component={Main}/>
                         <Route exact path="/contacts" component={Contacts}/>
+                        <Route exact path="/menu" component={Menu}/>
                     </Switch>
                 </Router>
 
@@ -73,8 +70,11 @@ class App extends Component {
 
 export default App;
 
-const menuItem = (str, link, blank) => {
-    return (<li>
+const menuItem = (str, link, active, blank) => {
+    const act = () => {
+        return active ? active === link : '';
+    };
+    return (<li className={act() ? 'active' : ''}>
         <a href={link ? link : '/'} target={blank ? '_blank' : '_self'}>
             <span>{str}</span>
             <i className="line"/>
