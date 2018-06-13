@@ -1,4 +1,4 @@
-<a href='BrowserStack.com'><img src='https://c2.staticflickr.com/2/1748/41873537235_8c8ae535ca_o.png' width='400px'/></a>
+<a href='https://www.browserstack.com/'><img src='https://c2.staticflickr.com/2/1748/41873537235_8c8ae535ca_o.png' width='400px'/></a>
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
