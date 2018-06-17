@@ -38,9 +38,9 @@ class Main extends PureComponent {
                     <div className='main' style={{backgroundImage: `url(${video_bg})`}}>
                         <div className='main_delivery'>
                             <div className='main_delivery_text'>
-                                <p className='sound'>ммммммм</p>
-                                <span className='shashlik'>ГОРЯЧИЕ ШАШЛЫКИ</span>
-                                <p className='and_pastry'>и свежая выпечка</p>
+                                {/*<p className='sound'>ммммммм</p>*/}
+                                <span className='shashlik'>Удовольствие вкуса</span>
+                                <p className='and_pastry'>доставка </p>
                             </div>
                         </div>
                     </div>

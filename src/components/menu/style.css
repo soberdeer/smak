@@ -21,26 +21,44 @@
     display: table;
 }
 
+.menu_list{
+    -webkit-padding-start: 0;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+}
+
 .menu ul li {
     float: left;
-    width: 33.333333%;
-    padding: 0.3vw .15vw 0 .15vw;
+    width: calc(25% - .3vw);
+    padding: .3vw .15vw 0 .15vw;
     position: relative;
+    overflow: hidden;
+    opacity: 0;
+    animation-name: fadeInRight;
+    animation-duration: .5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+.menu ul li.rendered {
+    opacity: 1;
 }
 
 .menu ul li a, .menu ul li .wrap {
     position: relative;
     display: block;
-    opacity: 0;
     overflow: hidden;
     color: #fff;
-    -webkit-transform: translateX(2vw);
-    transform: translateX(2vw);
+
+    /*-webkit-transform: translateX(2vw);*/
+    /*transform: translateX(2vw);*/
+
 }
 
 
 .menu ul li a figure {
     overflow: hidden;
+    margin: 0;
 }
 
 .menu ul li a img, .menu ul li .wrap img {
@@ -48,6 +66,7 @@
     backface-visibility: hidden;
     -webkit-transform: scale(1);
     transform: scale(1);
+    filter: brightness(0.8)  saturate(0.8);
     -webkit-transition: all .4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     transition: all .4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
@@ -111,6 +130,7 @@
 
 
 .slide-fade-enter-active {
+
     transition: all .3s ease;
 }
 .slide-fade-leave-active {
@@ -120,4 +140,18 @@
     /* .slide-fade-leave-active до версии 2.1.8 */ {
     transform: translateX(10px);
     opacity: 0;
+}
+
+
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(2vw);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }

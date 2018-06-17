@@ -34,7 +34,14 @@ class App extends Component {
         window.removeEventListener('resize', this.onResize)
     }
 
+    isBlack = () => {
+        console.log(this.state.active)
+        return this.state.active === '/menu' ? 'black' : 'white'
+    };
+
     render() {
+
+
         return (
             <div className="App" style={{
                 height: this.state.height,
@@ -44,8 +51,11 @@ class App extends Component {
                     <a href='/' className={'logo'}>
                         <Logo/>
                     </a>
-                    <nav>
-                        <ul>
+                    <div className={'mobile-menu ' + this.isBlack()}>
+                        <div className="open" ></div>
+                    </div>
+                    <nav className='nav'>
+                        <ul className={this.isBlack()}>
                             {menuItem('Главная', '/', this.state.active)}
                             {menuItem('Меню', '/menu', this.state.active)}
                             {menuItem('Новости')}
@@ -74,7 +84,9 @@ const menuItem = (str, link, active, blank) => {
     const act = () => {
         return active ? active === link : '';
     };
-    return (<li className={act() ? 'active' : ''}>
+
+
+    return (<li className={act() ? 'active' : ''} >
         <a href={link ? link : '/'} target={blank ? '_blank' : '_self'}>
             <span>{str}</span>
             <i className="line"/>

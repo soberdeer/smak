@@ -1,5 +1,6 @@
 import React, {PureComponent} from 'react'
 import './style.css'
+import pizza from '../../assets/pizza.jpg'
 
 class Menu extends PureComponent {
     constructor(props) {
@@ -28,10 +29,13 @@ class Menu extends PureComponent {
     }
 
     render() {
+        let mapped = arr.map(function (item, i) {
+            return menu_item(item, i)
+        })
         return (
             <div className="menu">
                 <ul className='menu_list'>
-
+                    {mapped}
                 </ul>
             </div>
         )
@@ -40,34 +44,30 @@ class Menu extends PureComponent {
 
 export default Menu
 
-const menu_item = ({href, img, alt, opacity, transform}) => {
-    return (<li>
-        <a href={href} className="move" style={`opacity: ${opacity}, transform: ${transform}`}>
+const menu_item = (item, i) => {
+
+    return (<li className={'' + setTimeout(function () {
+        return 'rendered'
+    }, 70*i)} style={{height: window.innerWidth / 4 + 'px', animationDelay: 70 * i + 'ms'}} key={'menuItem' + i}>
+        <a href={item.href} className={"move"}>
             <span className="curtain"></span>
-            <figure><img src={img} alt={alt}/></figure>
+            <figure className={'menu_item_figure'}><img src={item.thumb} alt={item.text}/></figure>
             <div className="title">
                 <div className="table">
-                    <div className="cell">
-                        <div className="btn-wrap">
-                            <div className="arrow-link">
-                                 <span className="arrow-wrap v1">
-                                     <span className="arrow">
-                                         <span className="line">
-                                         </span>
-                                        </span>
-                                     </span>
-                                <span className="text"><i>VIEW ALL</i></span>
-                                <span className="arrow-wrap v2">
-                                    <span className="arrow">
-                                        <span className="line">
-                                        </span>
-                                    </span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </a>
     </li>)
 };
+
+
+const arr = [{href: '/', thumb: pizza, text: 'as'},
+    {href: '/', thumb: pizza, text: 'as'},
+    {href: '/', thumb: pizza, text: 'as'},
+    {href: '/', thumb: pizza, text: 'as'},
+    {href: '/', thumb: pizza, text: 'as'},
+    {href: '/', thumb: pizza, text: 'as'},
+    {href: '/', thumb: pizza, text: 'as'},
+    {href: '/', thumb: pizza, text: 'as'},
+]

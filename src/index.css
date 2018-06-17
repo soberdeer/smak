@@ -75,13 +75,16 @@ li {
 }
 
 
-
 header nav > ul > li > a {
     color: #fff;
     padding: .65vw 0vw;
     position: relative;
     z-index: 5;
     display: block;
+}
+
+header nav > ul.black > li > a {
+    color: #000;
 }
 
 header nav > ul > li > a span {
@@ -110,6 +113,10 @@ header nav > ul > li > a .line {
     transform: scale(0, 1);
 }
 
+header nav > ul.black > li > a .line {
+    background: #000;
+}
+
 header nav > ul > li.active > a .line {
     -webkit-transform-origin: left center;
     -ms-transform-origin: left center;
@@ -128,8 +135,22 @@ header nav > ul > li > a:hover .line {
     transform: scale(1, 1);
 }
 
+
+
+@media only screen and (max-width: 900px){
+    header nav{
+        display: none;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+}
+
 .video-wrap {
     position: relative;
     width: 100%;
     overflow: hidden;
 }
+
+
