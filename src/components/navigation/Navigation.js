@@ -2,7 +2,7 @@ import React, {PureComponent} from 'react'
 import './style.css'
 import pizza from '../../assets/pizza.jpg'
 
-class Menu extends PureComponent {
+class Navigation extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
@@ -42,22 +42,24 @@ class Menu extends PureComponent {
     }
 }
 
-export default Menu
+export default Navigation
 
 const menu_item = (item, i) => {
 
     return (<li className={'' + setTimeout(function () {
         return 'rendered'
-    }, 70*i)} style={{height: window.innerWidth / 4 + 'px', animationDelay: 70 * i + 'ms'}} key={'menuItem' + i}>
-        <a href={item.href} className={"move"}>
-            <span className="curtain"></span>
-            <figure className={'menu_item_figure'}><img src={item.thumb} alt={item.text}/></figure>
-            <div className="title">
-                <div className="table">
+    }, 70 * i)} style={{height: window.innerWidth / 4 + 'px', animationDelay: 70 * i + 'ms'}} key={'menuItem' + i}>
+        <div className="shop-item-hidden">
+            <a href={item.href} className="btn btn-block btn-dark">В корзину</a>
+        </div>
+        <span className="curtain"></span>
+        <figure className={'menu_item_figure'}><img src={item.thumb} alt={item.text}/></figure>
+        <div className="title">
+            <div className="table">
 
-                </div>
             </div>
-        </a>
+        </div>
+
     </li>)
 };
 

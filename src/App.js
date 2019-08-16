@@ -4,7 +4,7 @@ import './App.css';
 import Logo from './assets/Logo'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Contacts from "./components/addresses/Contacts";
-import Menu from "./components/menu/Menu";
+import Navigation from "./components/navigation/Navigation";
 
 
 class App extends Component {
@@ -68,7 +68,7 @@ class App extends Component {
                     <Switch>
                         <Route exact path="/" component={Main}/>
                         <Route exact path="/contacts" component={Contacts}/>
-                        <Route exact path="/menu" component={Menu}/>
+                        <Route exact path="/menu" component={Navigation}/>
                     </Switch>
                 </Router>
 
