@@ -4,7 +4,7 @@ import './App.css';
 import Logo from './assets/Logo'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Contacts from "./components/addresses/Contacts";
-import Navigation from "./components/navigation/Navigation";
+import SubMenu from "./components/subMenu/SubMenu";
 
 
 class App extends Component {
@@ -35,7 +35,6 @@ class App extends Component {
     }
 
     isBlack = () => {
-        console.log(this.state.active)
         return this.state.active === '/menu' ? 'black' : 'white'
     };
 
@@ -68,7 +67,7 @@ class App extends Component {
                     <Switch>
                         <Route exact path="/" component={Main}/>
                         <Route exact path="/contacts" component={Contacts}/>
-                        <Route exact path="/menu" component={Navigation}/>
+                        <Route exact path="/menu" component={SubMenu}/>
                     </Switch>
                 </Router>
 
